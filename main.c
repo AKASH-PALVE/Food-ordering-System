@@ -7,6 +7,7 @@ Date : 7 Jube 2024
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<conio.h>
 
 // UI DESIGN ---------------------------------------------------------------------------
 
@@ -294,14 +295,19 @@ Order* CheckOrderAndMakeItReturn(Restaurant* head){
     printf("Do You want to Add item to cart (y/n) : ");
     char ch;
     scanf(" %c", &ch);
+    fflush(stdin);
+    fflush(stdin);
     if(ch == 'y'){
 
         printf("Enter Food Id : ");
         int foodid;
         scanf("%d", &foodid);
+         fflush(stdin);
+        
         printf("Enter Quantity : ");
         int quantity;
         scanf("%d", &quantity);
+         fflush(stdin);
 
         Order* newOrder = (Order*) malloc(sizeof(Order));
 
@@ -418,6 +424,7 @@ void main(){
         int ch=-1;
         printf("Enter choice : ");
         scanf("%d",&ch);
+         fflush(stdin);
 
         if (ch==1)      
         {
@@ -428,15 +435,18 @@ void main(){
             int admin_choice=-1;
             printf("Enter choice : ");
             scanf("%d",&admin_choice);
+             fflush(stdin);
             switch (admin_choice )
             {
             case 1: // 1. Add Restaurant
                 printf("Enter Restaurant ID : ");
                 int id;
                 scanf("%d",&id);
+                 fflush(stdin);
                 printf("Enter Restaurant Name : ");
                 char name[50];
                 scanf("%s",name);
+                 fflush(stdin);
                 addRestaurant(&restaurants,id,name);
                 break;
             
@@ -444,6 +454,7 @@ void main(){
                 printf("Enter Restaurant ID : ");
                 int id2;
                 scanf("%d",&id2);
+                 fflush(stdin);
                 removeRestaurant(&restaurants,id2); // passing ll and id 
                 break;
             
@@ -451,15 +462,19 @@ void main(){
                 printf("Enter Restaurant ID : ");
                 int id3;
                 scanf("%d",&id3);
+                 fflush(stdin);
                 printf("Enter Food ID : ");
                 int fid;
                 scanf("%d",&fid);
+                 fflush(stdin);
                 printf("Enter Food Name : ");
                 char fname[50];
                 scanf("%s",fname);
+                 fflush(stdin);
                 printf("Enter Food Price : ");
                 float fprice;
                 scanf("%f",&fprice);
+                 fflush(stdin);
                 
                 addFoodInRestaurant(findRestaurantById(restaurants,id3), fid, fname , fprice);
             
@@ -470,9 +485,11 @@ void main(){
                 printf("Enter Restaurant ID : ");
                 int id4;
                 scanf("%d",&id4);
+                 fflush(stdin);
                 printf("Enter Food ID : ");
                 int fid2;
                 scanf("%d",&fid2);
+                 fflush(stdin);
                 removeFoodInRestaurant(findRestaurantById(restaurants,id4), fid2);
                 break;
 
@@ -489,6 +506,7 @@ void main(){
                 printf("Enter Restaurant ID : ");
                 int id5;
                 scanf("%d",&id5);
+                 fflush(stdin);
                 viewAllFoodsInRestaurant(findRestaurantById(restaurants,id5));
                 break;
             
@@ -514,6 +532,7 @@ void main(){
             int user_choice = -1 ;
             printf("Enter choice : ");
             scanf("%d",&user_choice);
+             fflush(stdin);
 
             switch (user_choice )
             {
@@ -535,6 +554,7 @@ void main(){
                 printf("Enter Restaurant ID : ");
                 int id5;
                 scanf("%d",&id5);
+                 fflush(stdin);
                 printf("\n------------------------------------------------------------------\n");
                 viewAllFoodsInRestaurant(findRestaurantById(restaurants,id5));
                 printf("\n------------------------------------------------------------------\n");
