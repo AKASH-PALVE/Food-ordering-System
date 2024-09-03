@@ -1,7 +1,7 @@
 
 /*
 Author : Akash Palve
-Date : 7 Jube 2024
+Date : 7 June 2024
 */
 
 #include<stdio.h>
